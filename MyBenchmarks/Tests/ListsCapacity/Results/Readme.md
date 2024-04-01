@@ -7,6 +7,20 @@ AMD Ryzen 7 5800X3D, 1 CPU, 16 logical and 8 physical cores
   DefaultJob : .NET 7.0.10 (7.0.1023.36312), X64 RyuJIT AVX2
 
 
+Here the main goal is to test empirically that lists are just simple arrays, and with we do not provide their capacity, we can have an overhead
+
+General Performance Test
+WithoutCapacity_NoHeap: Action: Populate a pre instantiated list with non defined capacity.
+WithCapacity_NoHeap: Action: Populate a pre instantiated list with defined capacity.
+
+Memory segmentation tests without Garbage Collector
+WithoutCapacity_Heap: Action: Populate a pre instantiated list with non defined capacity, but adding some objects to the heap in order to make the reallocation process more expensive
+WithCapacity_Heap: Action: Populate a pre instantiated list with defined capacity, but adding some objects to the heap in order to make the reallocation process more expensive
+
+Memory segmentation tests with Garbage Collector
+WithoutCapacity_Heap_CallGC: Action: Populate a pre instantiated list with non defined capacity, but adding some objects to the heap in order to make the reallocation process more expensive, but now calling our feared Garbage Collector
+WithCapacity_Heap_CallGC: Action: Populate a pre instantiated list with defined capacity, but adding some objects to the heap in order to make the reallocation process more expensive, but now calling our feared Garbage Collector
+
 ```
 | Method                      | Mean      | Error     | StdDev    | Gen0      | Gen1      | Gen2      | Allocated |
 |---------------------------- |----------:|----------:|----------:|----------:|----------:|----------:|----------:|
