@@ -51,7 +51,6 @@ public class ListCapacityTests
         GC.Collect();
         GC.WaitForPendingFinalizers();
         var list = new List<int>(1000000);
-        List<DataModel> auxListForMemorySegmentation = new List<DataModel>(capacity: 1000000);
         for (int i = 0; i < 1000000; i++)
         {
             var Datamodel = new DataModel(i);
