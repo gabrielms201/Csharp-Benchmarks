@@ -20,13 +20,12 @@ WithCapacity_Heap: Action: Populate a pre instantiated list with defined capacit
 Memory segmentation tests with Garbage Collector
 WithoutCapacity_Heap_CallGC: Action: Populate a pre instantiated list with non defined capacity, but adding some objects to the heap in order to make the reallocation process more expensive, but now calling our feared Garbage Collector
 WithCapacity_Heap_CallGC: Action: Populate a pre instantiated list with defined capacity, but adding some objects to the heap in order to make the reallocation process more expensive, but now calling our feared Garbage Collector
-
 ```
 | Method                      | Mean      | Error     | StdDev    | Gen0      | Gen1      | Gen2      | Allocated |
 |---------------------------- |----------:|----------:|----------:|----------:|----------:|----------:|----------:|
-| WithoutCapacity_NoHeap      |  3.617 ms | 0.0506 ms | 0.0473 ms | 1980.4688 | 1980.4688 | 1980.4688 |      8 MB |
-| WithCapacity_NoHeap         |  2.264 ms | 0.0290 ms | 0.0272 ms |  996.0938 |  996.0938 |  996.0938 |   3.82 MB |
-| WithoutCapacity_Heap        | 10.719 ms | 0.1101 ms | 0.1030 ms | 2000.0000 | 2000.0000 | 2000.0000 |  30.89 MB |
-| WithCapacity_Heap           |  8.077 ms | 0.1144 ms | 0.1070 ms | 1500.0000 | 1500.0000 | 1500.0000 |  34.33 MB |
-| WithoutCapacity_Heap_CallGC | 15.499 ms | 0.0841 ms | 0.0702 ms | 1984.3750 | 1984.3750 | 1984.3750 |  30.89 MB |
-| WithCapacity_Heap_CallGC    |  7.951 ms | 0.1545 ms | 0.1717 ms |  984.3750 |  984.3750 |  984.3750 |   26.7 MB |
+| WithoutCapacity_NoHeap      |  3.778 ms | 0.0467 ms | 0.0437 ms | 1988.2813 | 1988.2813 | 1988.2813 |      8 MB |
+| WithCapacity_NoHeap         |  2.218 ms | 0.0166 ms | 0.0156 ms |  996.0938 |  996.0938 |  996.0938 |   3.82 MB |
+| WithoutCapacity_Heap        | 10.333 ms | 0.0794 ms | 0.0703 ms | 2000.0000 | 2000.0000 | 2000.0000 |  30.89 MB |
+| WithCapacity_Heap           |  7.888 ms | 0.1518 ms | 0.1973 ms | 1000.0000 | 1000.0000 | 1000.0000 |   26.7 MB |
+| WithoutCapacity_Heap_CallGC | 15.745 ms | 0.0874 ms | 0.0818 ms | 1984.3750 | 1984.3750 | 1984.3750 |  30.89 MB |
+| WithCapacity_Heap_CallGC    |  7.810 ms | 0.1524 ms | 0.1871 ms |  984.3750 |  984.3750 |  984.3750 |   26.7 MB |
