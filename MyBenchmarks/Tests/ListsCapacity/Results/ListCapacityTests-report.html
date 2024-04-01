@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>ListCapacityTests-20240331-233623</title>
+<title>ListCapacityTests-20240331-234221</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -16,20 +16,21 @@
 BenchmarkDotNet v0.13.12, Windows 10 (10.0.19045.3324/22H2/2022Update)
 AMD Ryzen 7 5800X3D, 1 CPU, 16 logical and 8 physical cores
 .NET SDK 7.0.400
-  [Host]     : .NET 7.0.10 (7.0.1023.36312), X64 RyuJIT AVX2
+  [Host]     : .NET 7.0.10 (7.0.1023.36312), X64 RyuJIT AVX2 [AttachedDebugger]
   DefaultJob : .NET 7.0.10 (7.0.1023.36312), X64 RyuJIT AVX2
 </code></pre>
 <pre><code></code></pre>
 
 <table>
-<thead><tr><th>Method               </th><th>Mean</th><th>Error</th><th>StdDev</th><th>Gen0</th><th>Gen1</th><th>Gen2</th><th>Allocated</th>
+<thead><tr><th>Method                   </th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Gen0</th><th>Gen1</th><th>Gen2</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>WithoutCapacity_NoHeap</td><td>3.778 ms</td><td>0.0467 ms</td><td>0.0437 ms</td><td>1988.2813</td><td>1988.2813</td><td>1988.2813</td><td>8 MB</td>
-</tr><tr><td>WithCapacity_NoHeap</td><td>2.218 ms</td><td>0.0166 ms</td><td>0.0156 ms</td><td>996.0938</td><td>996.0938</td><td>996.0938</td><td>3.82 MB</td>
-</tr><tr><td>WithoutCapacity_Heap</td><td>10.333 ms</td><td>0.0794 ms</td><td>0.0703 ms</td><td>2000.0000</td><td>2000.0000</td><td>2000.0000</td><td>30.89 MB</td>
-</tr><tr><td>WithCapacity_Heap</td><td>7.888 ms</td><td>0.1518 ms</td><td>0.1973 ms</td><td>1000.0000</td><td>1000.0000</td><td>1000.0000</td><td>26.7 MB</td>
-</tr><tr><td>WithoutCapacity_Heap_CallGC</td><td>15.745 ms</td><td>0.0874 ms</td><td>0.0818 ms</td><td>1984.3750</td><td>1984.3750</td><td>1984.3750</td><td>30.89 MB</td>
-</tr><tr><td>WithCapacity_Heap_CallGC</td><td>7.810 ms</td><td>0.1524 ms</td><td>0.1871 ms</td><td>984.3750</td><td>984.3750</td><td>984.3750</td><td>26.7 MB</td>
+</thead><tbody><tr><td>WithoutCapacity_NoHeap</td><td>3.607 ms</td><td>0.0340 ms</td><td>0.0318 ms</td><td>3.594 ms</td><td>1992.1875</td><td>1992.1875</td><td>1992.1875</td><td>8 MB</td>
+</tr><tr><td>WithCapacity_NoHeap</td><td>2.373 ms</td><td>0.0472 ms</td><td>0.0749 ms</td><td>2.383 ms</td><td>996.0938</td><td>996.0938</td><td>996.0938</td><td>3.82 MB</td>
+</tr><tr><td>WithoutCapacity_Heap</td><td>10.466 ms</td><td>0.0546 ms</td><td>0.0511 ms</td><td>10.464 ms</td><td>2000.0000</td><td>2000.0000</td><td>2000.0000</td><td>30.89 MB</td>
+</tr><tr><td>WithCapacity_Heap</td><td>7.728 ms</td><td>0.1517 ms</td><td>0.2127 ms</td><td>7.843 ms</td><td>1000.0000</td><td>1000.0000</td><td>1000.0000</td><td>26.7 MB</td>
+</tr><tr><td>WithoutCapacity_Heap_CallGC</td><td>15.664 ms</td><td>0.1735 ms</td><td>0.1622 ms</td><td>15.719 ms</td><td>1968.7500</td><td>1968.7500</td><td>1968.7500</td><td>30.89 MB</td>
+</tr><tr><td>WithCapacity_Heap_CallGC</td><td>7.502 ms</td><td>0.1435 ms</td><td>0.1535 ms</td><td>7.502 ms</td><td>984.3750</td><td>984.3750</td><td>984.3750</td><td>26.7 MB</td>
+</tr><tr><td>Test_Using_Freaking_Linked_List</td><td>29.488 ms</td><td>0.2755 ms</td><td>0.2442 ms</td><td>29.549 ms</td><td>937.5000</td><td>875.0000</td><td>-</td><td>45.78 MB</td>
 </tr></tbody></table>
 </body>
 </html>

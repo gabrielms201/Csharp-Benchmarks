@@ -14,7 +14,6 @@ public class ListCapacityTests
         var list = new List<int>();
         for (int i = 0; i < 1000000; i++)
             list.Add(i);
-        Console.WriteLine($"Finished {nameof(WithoutCapacity_NoHeap)}");
     }
 
     [Benchmark]
@@ -25,7 +24,6 @@ public class ListCapacityTests
         var list = new List<int>(1000000);
         for (int i = 0; i < 1000000; i++)
             list.Add(i);
-        Console.WriteLine($"Finished {nameof(WithCapacity_NoHeap)}");
     }
 
 
@@ -41,7 +39,6 @@ public class ListCapacityTests
             var Datamodel = new DataModel(i);
             list.Add(1);
         }
-        Console.WriteLine($"Finished {nameof(WithoutCapacity_Heap)}");
     }
 
     [Benchmark]
@@ -56,7 +53,6 @@ public class ListCapacityTests
             var Datamodel = new DataModel(i);
             list.Add(1);
         }
-        Console.WriteLine($"Finished {nameof(WithCapacity_Heap)}");
     }
 
     [Benchmark]
@@ -69,7 +65,6 @@ public class ListCapacityTests
             var Datamodel = new DataModel(i);
             list.Add(1);
         }
-        Console.WriteLine($"Finished {nameof(WithoutCapacity_Heap_CallGC)}");
     }
 
     [Benchmark]
@@ -82,6 +77,15 @@ public class ListCapacityTests
             var Datamodel = new DataModel(i);
             list.Add(1);
         }
-        Console.WriteLine($"Finished {nameof(WithCapacity_Heap_CallGC)}");
+    }
+
+
+    [Benchmark]
+    [Description("Action: Same test as the first and second, but now using freaking linked list")]
+    public void Test_Using_Freaking_Linked_List()
+    {
+        var list = new LinkedList<int>();
+        for (int i = 0; i < 1000000; i++)
+            list.AddLast(i);
     }
 }
