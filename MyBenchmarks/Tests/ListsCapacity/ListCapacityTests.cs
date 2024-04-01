@@ -29,7 +29,7 @@ public class ListCapacityTests
     }
 
 
-    [Description("Action: Populate a pre instantiated list with non defined capacity, but adding some objects to the heap in order to make the reallocation process more costly")]
+    [Description("Action: Populate a pre instantiated list with non defined capacity, but adding some objects to the heap in order to make the reallocation process more expensive")]
     [Benchmark]
     public void WithoutCapacity_Heap()
     {
@@ -45,7 +45,7 @@ public class ListCapacityTests
     }
 
     [Benchmark]
-    [Description("Action: Populate a pre instantiated list with defined capacity, but adding some objects to the heap in order to make the reallocation process more costly")]
+    [Description("Action: Populate a pre instantiated list with defined capacity, but adding some objects to the heap in order to make the reallocation process more expensive")]
     public void WithCapacity_Heap()
     {
         GC.Collect();
@@ -61,7 +61,7 @@ public class ListCapacityTests
     }
 
     [Benchmark]
-    [Description("Action: Populate a pre instantiated list with non defined capacity, but adding some objects to the heap in order to make the reallocation process more costly, but now calling our feared Garbage Collector")]
+    [Description("Action: Populate a pre instantiated list with non defined capacity, but adding some objects to the heap in order to make the reallocation process more expensive, but now calling our feared Garbage Collector")]
     public void WithoutCapacity_Heap_CallGC()
     {
         var list = new List<int>();
@@ -74,7 +74,7 @@ public class ListCapacityTests
     }
 
     [Benchmark]
-    [Description("Action: Populate a pre instantiated list with defined capacity, but adding some objects to the heap in order to make the reallocation process more costly, but now calling our feared Garbage Collector")]
+    [Description("Action: Populate a pre instantiated list with defined capacity, but adding some objects to the heap in order to make the reallocation process more expensive, but now calling our feared Garbage Collector")]
     public void WithCapacity_Heap_CallGC()
     {
         var list = new List<int>(1000000);
